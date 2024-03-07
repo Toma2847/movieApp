@@ -1,36 +1,34 @@
 //const url = 'https://api.themoviedb.org/3/trending/all/day?language=en-US';
-const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
+//const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
 
-const options = {
-    headers: {
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNTg2OTExMjc0MWIxODc4ZGM0ODJlNTg0YjY5Y2JjMyIsInN1YiI6IjY1ZTg2YjAxYTFhOWJhMDE0OGJkZTBkMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.97P7I4KG6HXcC6IVuTApkKIzhef33WT0kjVH8GENgOM"
-
-    },
-};
-
-export const getTrending = async (baseUrl) => {
+import {OPTIONS, baseUrl} from "./config.js";
 
 
-    const response = await fetch(baseUrl + "trending/all/day?language=en-US", options);
+
+
+export const getTrending = async () => {
+
+
+    const response = await fetch(baseUrl + "trending/all/day?language=en-US", OPTIONS);
     const data = await response.json();
 
     return data;
 };
 
-export const getTrendingMovies = async (baseUrl) => {
+export const getTrendingMovies = async () => {
 
 
-    const response = await fetch(baseUrl + "trending/movie/day?language=en-US", options);
+    const response = await fetch(baseUrl + "trending/movie/day?language=en-US", OPTIONS);
 
     const movie = await response.json();
 
     return movie;
 };
 
-export const getTrendingActor = async (baseUrl) => {
+export const getTrendingActor = async () => {
 
 
-    const response = await fetch(baseUrl + "search/person" + "?query=clooney ", options);
+    const response = await fetch(baseUrl + "search/person" + "?query=clooney", OPTIONS);
 
     const movie = await response.json();
 
