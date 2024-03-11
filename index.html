@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie app</title>
+</head>
+
+<body>
+    <h1 id="header">Movie App</h1>
+    <ul id="trending-movies-list"></ul>
+</body>
+
+<script type="module">
+    import { getTrendingMovies, getTrending, getTrendingActor } from "./js/api/trendingGetters.js";
+    import{createTrendingMoviesList} from "./js/index.js"
+
+    const movies = await getTrendingMovies();
+    createTrendingMoviesList(movies);
+
+</script>
+
+</html>
