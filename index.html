@@ -5,19 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie app</title>
+    <link rel="stylesheet" href="index.css"/>
+    <title>Movie App</title>
 </head>
 
 <body>
-    <h1 id="header">Movie App</h1>
+    <div>
+        <h1 id="header">Movie App</h1>
+    </div>
     <ul id="trending-movies-list"></ul>
+    </div id= "movies-card"></div>
+    <div id="movie-details"></div>
+
 </body>
 
 <script type="module">
     import { getTrendingMovies, getTrending, getTrendingActor } from "./js/api/trendingGetters.js";
-    import{createTrendingMoviesList} from "./js/index.js"
+    import { createTrendingMoviesList } from "./js/index.js"
 
     const movies = await getTrendingMovies();
     createTrendingMoviesList(movies);
+    createTrendingMoviesList(movies.results, "trending-movies-list", "title");
+
+
 
 </script>
 
