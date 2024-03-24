@@ -13,19 +13,31 @@
     <div>
         <h1 id="header">Movie App</h1>
     </div>
-    <ul id="trending-movies-list"></ul>
-    </div id= "movies-card"></div>
+    
+    <ul id="trending-movies-list">
+
+    </ul>
+
+    <div id="movies-card">
+        <ul>
+            <li></li>
+        </ul>
+    </div>
     <div id="movie-details"></div>
 
 </body>
 
 <script type="module">
     import { getTrendingMovies, getTrending, getTrendingActor } from "./js/api/trendingGetters.js";
-    import { createTrendingMoviesList } from "./js/index.js"
+    import  {createCard} from "./js/index.js"
 
-    const movies = await getTrendingMovies();
-    createTrendingMoviesList(movies);
-    createTrendingMoviesList(movies.results, "trending-movies-list", "title");
+    const movies = await getTrendingMovies()
+    .then((data) => {
+        createCard(data);
+    });
+
+   
+//createTrendingMoviesList(movies.results, "trending-movies-list", "title");
 
 
 

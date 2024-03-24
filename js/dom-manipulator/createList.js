@@ -32,36 +32,50 @@ export const createTrendingMoviesList = (movies) => {
     cardContainer;
 }
 
-const createCard = (movies) => {
+const IMAGE_PATH = 'https://image.tmdb.org/t/p/w342';
 
+export const createCard = (movies) => {
+
+    
     const cardContainer = document.getElementById("movies-card");
+    
     movies.results.forEach(element => {
 
         const card = document.createElement("div");
 
-const textContainer = document.createElement("div");
+        const textContainer = document.createElement("div");
 
-const image = document.createElement("img");
-image.src = element.poster_path
-image.alt = 'poster';
+        const image = document.createElement("img");
 
-const title = document.createElement("h1");
-title.innerText = element.title;
+        const imageUrl = element.poster_path;
 
-const description = document.createElement("p");
-description.innerText = element.overview
+        image.src = IMAGE_PATH + imageUrl;
 
-textContainer.appendChild(title);
+        image.alt = 'poster';
 
-textContainer.appendChild(description);
 
-card.appendChild(textContainer);
 
-card.appendChild(image);
+        const title = document.createElement("h1");
+        title.innerText = element.title;
 
-cardContainer.appendChild(card);
-    })
+        const description = document.createElement("p");
+        description.innerText = element.overview;
+
+        textContainer.appendChild(image);
+
+        textContainer.appendChild(title);
+
+        textContainer.appendChild(description);
+
+        card.appendChild(textContainer);
+
+        cardContainer.appendChild(card);
+
+
+    });
 }
+
+
 
 
 

@@ -4,9 +4,11 @@
 //carica le variabili d'ambiente del file .env
 //dotenv.config();
 
-import {API_KEY} from "./constants.js"; 
+//import {API_KEY} from "./constants.js"; 
 
 export const baseUrl = "https://api.themoviedb.org/3/";
+
+const API_KEY="eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNTg2OTExMjc0MWIxODc4ZGM0ODJlNTg0YjY5Y2JjMyIsInN1YiI6IjY1ZTg2YjAxYTFhOWJhMDE0OGJkZTBkMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.97P7I4KG6HXcC6IVuTApkKIzhef33WT0kjVH8GENgOM";
 
 export const OPTIONS = {
     headers: {

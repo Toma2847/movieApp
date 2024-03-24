@@ -20,9 +20,9 @@ export const getTrendingMovies = async () => {
 
     const response = await fetch(baseUrl + "trending/movie/day?language=en-US", OPTIONS);
 
-    const movie = await response.json();
+    const data = await response.json();
 
-    return movie;
+    return data;
 };
 
 export const getTrendingActor = async () => {
@@ -30,9 +30,9 @@ export const getTrendingActor = async () => {
 
     const response = await fetch(baseUrl + "search/person" + "?query=clooney", OPTIONS);
 
-    const movie = await response.json();
+    const data = await response.json();
 
-    return movie;
+    return data;
 };
 
 
