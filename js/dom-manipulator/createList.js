@@ -61,6 +61,8 @@ export const createCard = (movies) => {
         const description = document.createElement("p");
         description.innerText = element.overview;
 
+        const carosello = document.createElement('div');
+
         textContainer.appendChild(image);
 
         textContainer.appendChild(title);
